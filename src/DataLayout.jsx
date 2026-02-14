@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router'
+import { NavLink, Outlet } from 'react-router'
 
 export default function DataLayout() {
   return (
@@ -6,9 +6,18 @@ export default function DataLayout() {
       <header>
         <h1>This is header</h1>
         <nav>
-          <a href="/data">Data</a> | <a href="/data/products">Products</a> |{' '}
-          <a href="/data/customers">Customers</a> |{' '}
-          <a href="/data/sellers">Sellers</a>
+          <NavLink to="/data/products">Products</NavLink> |{' '}
+          <NavLink to="/data/customers">Customers</NavLink> |{' '}
+          <NavLink to="/data/sellers">Sellers</NavLink> |{' '}
+          <NavLink
+            to={{
+              pathname: '/data/products',
+              search: '?category=shoes',
+              hash: '#top',
+            }}
+          >
+            Products
+          </NavLink>
         </nav>
       </header>
       <div>

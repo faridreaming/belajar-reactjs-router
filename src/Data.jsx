@@ -1,3 +1,5 @@
+import './data.css'
+
 export default function Data() {
   return (
     <div>
